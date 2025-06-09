@@ -4,6 +4,14 @@ FROM python:3.13.2-slim
 ENV PYTHONDONTWRITEBYTECODE="1"
 ENV PYTHONUNBUFFERED="1"
 ENV PORT="8888"
+ENV TRANSPORT_ROUTES={
+    "all://*.ichigotv.net": {
+        "verify_ssl": false
+    },
+    "all://ichigotv.net": {
+        "verify_ssl": false
+    }
+}
 
 # Set work directory
 WORKDIR /mediaflow_proxy
